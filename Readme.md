@@ -48,3 +48,168 @@ age =25 // Never  Re-assign
 “=” একটি অ্যাসাইনমেন্ট অপারেটর, “==” একটি তুলনা অপারেটর। “===” একটি কঠোরভাবে সমতা তুলনা অপারেটর। “==” দুটি মানের তুলনা করে যা টাইপ কোর্সিয়ন করে। এর মানে হল JS তুলনা করার আগে ডেটার ধরণকে একটি সাধারণ টাইপে রূপান্তর করবে। কিন্তু “===” টাইপ কোর্সিয়ন করে না যা এটিকে মান এবং তার
 ডেটা টাইপ অনুসারে ডেটা পরীক্ষা করতে দেয়।
 
+# Array Method
+## map()
+map() খুবই শক্তিশালী একটা ফাংশন যা অ্যারের প্রতিটা উপাদানের উপর নির্দিষ্ট কাজ করে এবং নতুন অ্যারে রিটার্ন করে ।
+``` 
+const numbers = [4, 5, 2, 8, 10];
+const result = numbers.map(num => num * 2);
+console.log(result); 
+Output: [8, 10, 4, 16, 20]
+
+-------------
+const friends=["karim","rahim","fahim"]
+const firstLetter=friends.map(frn=> frn[0])
+console.log("firstLetter of friend",firstLetter);
+
+Output:firstLetter of friend [ 'k', 'r', 'f' ]
+
+```
+## forEach()
+map এবং forEach কাছাকাছি জিনিস কিন্তু পার্থক্য হল map প্রতিটা উপাদানের উপর কাজ করার পর রিটার্ন করে কিন্তু forEach কাজ করার পর কোন কিছু রিটার্ন করে না । 
+
+```
+const numbers = [1, 5, 6, 4, 15];
+const result = numbers.forEach(n => console.log(n));   
+console.log(result);
+
+Output:
+  1
+  5
+  6
+  4
+  15
+undefined
+```
+
+## Filter()
+Filter() নির্দিষ্ট শর্ত অনুযায়ী অ্যারের থেকে উপাদান বাছাই করতে ব্যবহার করা হয়।Filter()  ছাকনির মত কাজ করে।
+```
+const players = [75, 65, 67, 71, 55, 59];
+const selected = players.filter(p => p > 70);
+console.log(selected);
+Output: 75, 71 
+```
+## Find()
+Find()  হল Filter মতই কিন্তু পার্থক্য হল Filter শর্ত মিলে গেলে যেগুলো মিলবে,  তাদের সবগুলো উপাদানকে array আকারে রিটার্ন করবে আর Find match করলে শুধু প্রথম উপাদান কে রিটার্ন করে আর কোন উপাদান না মিললে তাহলে undifine রিটার্ন করে ।
+
+```
+const players = [75, 65, 67, 60, 71, 55, 59];
+const selected = players.find(player => player > 70);   
+console.log(selected);
+Output: 75 ‍
+```
+
+## Some()
+Some()যদি অ্যারের মধ্যে একটা আইটেম বা উপাদান  যদি ঐ শর্ত পূরণ করে তাহলে এটি true রিটার্ন করে আর শর্ত পূরণ না করলে সেটা falseরিটার্ন করে।
+
+```
+const scores = [30, 45, 55, 80, 90];
+const hasPassed = scores.some(score => score >= 50);
+console.log(hasPassed); 
+
+Output: true
+```
+## every()
+every()যদি অ্যারের মধ্যে সব আইটেম বা উপাদান  যদি শর্ত পূরণ করে তাহলে এটি true রিটার্ন করে আর  যদি একটা আইটেম ও শর্ত পূরণ না করলে সেটা falseরিটার্ন করে। 
+```
+const scores = [60, 70, 55, 80, 90];
+const allPassed = scores.every(score => score >= 50);
+console.log(allPassed); 
+
+Output: true
+```
+## flat()
+flat()পদ্ধতিটি নেস্টেড অ্যারেগুলিকে single array flatten করতে ব্যবহৃত হয়।
+.flat(depth) কী
+এখানে depth মানে কয় লেভেল পর্যন্ত nested array ভাঙবে।
+``` 
+const nested = [1, 2, [3, 4, [5, 6]]];
+const flattened = nested.flat(2);
+console.log(flattened); 
+
+Output: [1, 2, 3, 4, 5, 6]
+```
+
+## sort()
+sort() পদ্ধতিটি একটি অ্যারের উপাদানগুলিকে একটি নির্দিষ্ট ক্রমে সাজানোর জন্য ব্যবহৃত হয়। 
+```
+const friends = ['Zara', 'Bob', 'Anna', 'Chris'];
+friends.sort();
+console.log(friends);
+
+Output:[ 'Anna', 'Bob', 'Chris', 'Zara' ]
+
+
+const numbers = [30, 5, 100, 12];
+numbers.sort();
+console.log(numbers);
+
+Output: [ 100, 12, 30, 5 ]
+```
+জাভাস্ক্রিপ্ট সংখ্যার তুলনা পুরা সংখ্যা দিয়ে না করে প্রথম অঙ্ক দিয়ে করে। সেজন্য সে 30 যেহেতু 3 দিয়ে শুরু হয়েছে, সে 30-কে 5-এর আগে রাখবে। একইভাবে 100 যেহেতু 1 দিয়ে শুরু হইছে, তাই 100-কে 30-এর আগে রাখবে। কী অদ্ভুত, তাই না?
+
+```
+const numbers = [30, 5, 100, 12];
+numbers.sort((a, b) => a - b);
+console.log(numbers);
+Output: [ 5, 12, 30, 100 ]
+```
+compare function এর মাধ্যমে এই সমস্যার সমাধান করা যায় ।
+এই compare function অ্যারে থেকে দুইটা করে উপাদান নিয়ে তুলনা করবে। অর্থাৎ (a, b) ab সে আসলে অ্যারের দুইটা উপাদান নিয়ে তুলনা করে। 
+
+হতে পারে a- b-এর মান পজিটিভ সংখ্যা। পজিটিভ মানে হচ্ছে a বড় আর b ছোট, তাই ab পজিটিভ হলে সে অ্যারের মধ্যে a-কে পরে নিয়ে যাবে, আর b-কে আগে নিয়ে যাবে।
+
+আবার হতে পারে a-b এর মান নেগেটিভ সংখ্যা। নেগেটিভ মানে হচ্ছে a ছোট আর b বড়, তাই a-b নেগেটিভ। আর এমনটা হলে সে অ্যারের মধ্যে a-কে আগে নিয়ে যাবে, আর b-কে পরে নিয়ে যাবে।
+
+আরেকটা জিনিস হতে পারে, a-b-এর মান শূন্য। অর্থাৎ a আর b দুইটার মানই সেইম। অর্থাৎ a-b-এর মধ্যে ডিফারেন্স নাই। তখন সে a-এর জায়গায় a-কে রেখে দিবে। সরাবে না। একইভাবে b-এর জায়গায় b-কে রেখে দিবে। জায়গা চেইঞ্জ করবে না।
+
+```
+Object Sort:
+  const friends = [
+   { name: 'Zara', age: 25 },
+   { name: 'Bob', age: 20 },
+   { name: 'Anna', age: 30 }
+  ];
+
+  friends.sort((a, b) => a.age - b.age);
+  console.log(friends);
+
+Output:
+[
+ { name: 'Bob', age: 20 },
+ { name: 'Zara', age: 25 },
+ { name: 'Anna', age: 30 }
+]
+```
+
+## slice()
+slice() কোন  একটা অ্যারের নির্দিষ্ট অংশকে  আলাদা করে ফেলে, কিন্তু মূল অ্যারের  কোন পরিবর্তন করে না ।
+Slice এর দুটি প্যারামিটার তাকে প্রথম প্যারামিটার হচ্ছে কোন ইনডেক্স থেকে কাটা শুরু করবে আর দ্বিতীয় প্যারামিটার হচ্ছে কোন ইনডেক্সের আগ পর্যন্ত কাটবে ।
+
+```
+const pizzaSlices = ['Bread', 'Cheese', 'Veggie', 'BBQ', 'Meet'];
+const selectedSlices = pizzaSlices.slice(1, 4);
+console.log(selectedSlices);
+console.log(pizzaSlices);
+  
+Output:
+['Cheese', 'Veggie', 'BBQ']
+['Bread', 'Cheese', 'Veggie', 'BBQ', 'Meet']
+```
+
+## splice()
+splice() মূল অ্যারের পরিবর্তন করে আর যে উপাদানগুলো রিমুভ হয়েছে তা রিটার্ন করে। 
+এর মাধ্যমে এর উপাদান রিমুভ করা যায়। এমনকি অ্যারের যে কোন জায়গায় নতুন উপাদান যোগ করা যায় । 
+Sড়lice এর দুটি প্যারামিটার তাকে প্রথম প্যারামিটার হচ্ছে কোন ইনডেক্স থেকে কাটা শুরু করবে আর দ্বিতীয় প্যারামিটার হচ্ছে  কয়টা উপাদান কাটবে  তার পরিমাণ ।
+
+```
+const movies = ['Jaws', 'Rocky', 'Alien', 'Avatar', 'Coco', 'Up', 'It'];
+const removed = movies.splice(2,3);
+console.log(removed);
+console.log(movies);
+
+Output: 
+['Alien', 'Avatar', 'Coco']
+['Jaws', 'Rocky', 'Up', 'It']
+```
