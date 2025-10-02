@@ -4,6 +4,7 @@
 ## জাভাস্ক্রিপ্ট কী?
 জাভাস্ক্রিপ্ট একটি হাই-লেভেল, ডায়নামিক এবং ইারপ্রেটেড প্রোগ্রামি ং ল্যাঙ্গুয়েজ যা মলূত ওয়েব পেজকে ইন্টারেক্টিভ করার জন্য ব্যবহৃত হয়। এখন এটি সার্ভার-সাইড (Node.js), মোবাইল অ্যাপ এবং ডেস্কটপ অ্যাপ তৈরিতে ও ব্যবহৃত হয়।  
 
+### Primitive Data type হল জাভাস্ক্রিপ্ট দ্বারা প্রদত্ত build in basic ডেটা টাইপ। এগুলি একক মান উপস্থাপন করে, যার অর্থ একবার তৈরি হয়ে গেলে এগুলি পরিবর্তন করা যায় না 
 
 ## জাভাস্ক্রিপ্টর প্রিমিটিভ (Primitive) ডেটা টাইপ কী কী?
 জাভাস্ক্রিপ্টের ৬ প্রিমিটিভ ডেটা টাইপ আছে :
@@ -14,6 +15,7 @@
   - null: কোনো মানের অনপুস্থিতি বোঝাতে ব্যবহৃত হয়। এটি একটি অবজেক্ট, কিন্তু এর টাইপ 'object' হওয়াটা এক ঐতিহাসিক ভুল।
  -  Symbol: ইউনিক এবং অপরিবর্তনীয় মান তৈরির জন্য।
 
+### Non-Primitive Data type হল প্রোগ্রামারদের দ্বারা তৈরি ডেটা টাইপ। এখানে একের অধিক বা মাল্টিপল ভ্যালু রাখা যায় । সেগুলো হল : Object ,Array
 
 
 ## জাভাস্ক্রিপ্ট কিভাবে কাজ করে?
@@ -213,4 +215,114 @@ console.log(movies);
 Output: 
 ['Alien', 'Avatar', 'Coco']
 ['Jaws', 'Rocky', 'Up', 'It']
+```
+
+# String Method 
+
+## include()
+includes() অ্যারের  মত স্ট্রিংয়ে  কোন অক্ষর আছে কিনা তা যাচাই করার জন্য includes মেথড ব্যবহার করা হয় ।
+
+```
+const name = 'Fahim';
+console.log(name.includes('h'));  
+
+Output: true
+```
+
+## toLowerCase()
+toLowerCase() এই  মেথডের মাধ্যমে কোন স্ট্রিংয়ের সবগুলো ক্যারেক্টার কে ছোট হাতের অক্ষরে পরিবর্তন করে
+```
+const name = 'FaHim';
+const lower = name.toLowerCase();
+console.log(lower);
+   
+Output: fahim
+```
+
+## toUpperCase()
+toUpperCase() এই  মেথডের মাধ্যমে কোন স্ট্রিংয়ের সবগুলো ক্যারেক্টার কে বড় হাতের অক্ষরে পরিবর্তন করে
+```
+const name = 'fahim';
+const lower = name.toUpperCase();
+console.log(lower);
+   
+Output: FAHIM
+```
+
+## trim()
+trim() পদ্ধতিটি স্ট্রিংয়ের উভয় প্রান্ত থেকে হোয়াইটস্পেস অক্ষরগুলি সরাতে ব্যবহৃত হয়।trim() পদ্ধতিটি মূল স্ট্রিংটি পরিবর্তন করে না; পরিবর্তে, এটি হোয়াইটস্পেসটি সরিয়ে একটি নতুন স্ট্রিং প্রদান করে।
+
+```
+const drink = '  water';
+const liquid = 'water ';
+console.log(drink.trim());
+console.log(liquid.trim());
+
+Output:water
+water
+```
+
+## split()
+split()একটা বড় স্ট্রিংকে আলাদা ছোট ছোট ভাগে ভাগ করার জন্য split method ব্যবহার করা হয় ।
+split() পদ্ধতিটি মূল স্ট্রিং পরিবর্তন না করেই সাবস্ট্রিং ধারণকারী একটি নতুন অ্যারে প্রদান করে।
+ Split করার জন্য কি দিয়ে আলাদা করা হবে বা কি দিয়ে split করানো হবে  প্রথম প্যারামিটারের সেটা দিতে হয়। সেটাকে ডিলিমিটার বলে ।আর দ্বিতীয় অপশনাল  প্যারামিটার হিসেবে  লিমিট দেওয়া হয় । 
+```
+const sentence = "i am a good and hardworking person";
+console.log(sentence.split(' '));  
+
+Output: ['i', 'am', 'a', 'good', 'and', 'hardworking', 'person']
+```
+
+## join()
+join()অ্যারের উপাদানগুলোকে জোড়া লাগানোর জন্য join method ব্যবহার করা হয় ।
+```
+const realFriend = ['Rahim', ' kahim', ' dahim', ' lahim', ' fahim', ' sahim'];
+console.log(realFriend.join('|'));  
+
+Output: Rahim| kahim| dahim| lahim| fahim| sahim
+```
+
+## concat()
+concat() পদ্ধতিটি দুটি বা ততোধিক স্ট্রিং বা অ্যারে একত্রিত করে একটি নতুন স্ট্রিং বা অ্যারেতে রূপান্তরিত করে।
+
+```
+const str1 = "Hello";
+const str2 = "World";
+const result = str1.concat(" ", str2); 
+console.log(result);         
+
+Output: "Hello World"
+```
+
+## toString()
+toString()ডিফারেন্ট টাইপের জিনিসকে স্ট্রিং এর কনভার্ট করার জন্য এই মেথর ব্যবহার করা হয় ।
+
+```
+const num = 123;
+const str = num.toString();
+console.log(str);  
+
+Output: "123"
+```
+
+## replace()
+replace() কোনো স্ট্রিংয়ের ছোট কোনো অংশকে যদি রিপ্লেস করতে replace mehtod ব্যবহার করা হয় । প্রথম প্যারামিটারে কাকে রিপ্লেস করবি। দ্বিতীয় প্যারামিটার হবে রিপ্লেস করে কী বসবে।
+
+```
+const text = "I love programming. programming is fun!";
+const result = text.replace("programming", "coding");
+console.log(result); 
+
+Output: I love coding. programming is fun!
+```
+
+## replaceAll()
+replaceAll() কোনো স্ট্রিংয়ের ছোট সব অংশকে যদি রিপ্লেস করতে replaceAll mehtod ব্যবহার করা হয় । প্রথম প্যারামিটারে কাকে রিপ্লেস করবি। দ্বিতীয় প্যারামিটার হবে রিপ্লেস করে কী বসবে।
+
+```
+const text = "I love programming. programming is fun!";
+const result = text.replaceAll("programming", "coding");
+console.log(result); 
+
+Output: I love coding. coding is fun!
 ```

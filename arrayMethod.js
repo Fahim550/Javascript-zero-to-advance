@@ -74,3 +74,8 @@ console.log("sliceNum2",sliceNum2);
 console.log("numbers10",numbers10);
 
 // splice()
+const movies = ['Jaws', 'Rocky', 'Alien', 'Avatar', 'Coco', 'Up', 'It'];
+const removed = movies.splice(2,3);
+console.log(removed);
+console.log(movies);
+
